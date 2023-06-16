@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +9,8 @@ namespace Cadastro_de_Usuarios
     internal class Program
     {
         //struct
-       
-        public struct DadosCadastraisStruct 
+
+        public struct DadosCadastraisStruct
         {
             public string Nome;
             public DateTime DataDeNascimento;
@@ -25,7 +25,7 @@ namespace Cadastro_de_Usuarios
             Sair = 1,
             Excecao = 2
         }
-        
+
         //Métodos
         public static void MostraMensagem(string mensagem)
         {
@@ -40,7 +40,7 @@ namespace Cadastro_de_Usuarios
             Resultado_e retorno;
             Console.WriteLine(mensagem);
             string temp = Console.ReadLine();
-            if(temp == "s")
+            if (temp == "s")
             {
                 retorno = Resultado_e.Sair;
             }
@@ -62,14 +62,15 @@ namespace Cadastro_de_Usuarios
                 {
                     Console.WriteLine(mensagem); //Escreva sua data ou S
                     string temp = Console.ReadLine();
-                    if(temp == "s")
+                    if (temp == "s")
                     {
                         Console.WriteLine("Encerrando o programa");
                         retorno = Resultado_e.Sair;
                     }
                     else
                     {
-                        minhaData = Convert.ToDateTime(temp); 
+                        minhaData = Convert.ToDateTime(temp);
+                        retorno = Resultado_e.Sucesso;
                     }
                 }
                 catch (Exception e)
@@ -81,8 +82,8 @@ namespace Cadastro_de_Usuarios
                     retorno = Resultado_e.Excecao;
                 }
             } while (retorno == Resultado_e.Excecao);
-                Console.Clear();
-                return retorno;  
+            Console.Clear();
+            return retorno;
         }
 
         public static Resultado_e PegaUInt32(ref UInt32 numeroUInt32, string mensagem)
@@ -102,6 +103,7 @@ namespace Cadastro_de_Usuarios
                     else
                     {
                         numeroUInt32 = Convert.ToUInt32(temp);
+                        retorno = Resultado_e.Sucesso;
                     }
                 }
                 catch (Exception e)
@@ -133,7 +135,7 @@ namespace Cadastro_de_Usuarios
                 return;
             if (PegaUInt32(ref CadastroUsuario.NumeroDaCasa, "Digite o número da casa ou pressione S para sair") != Resultado_e.Sucesso)
                 return;
-            ListaDeUsuarios.Add(CadastroUsuario); 
+            ListaDeUsuarios.Add(CadastroUsuario);
         }
 
         //Main
@@ -148,7 +150,7 @@ namespace Cadastro_de_Usuarios
                 if (opcao == "c")
                 {
                     //Cadastrar um novo usuário
-                    CadastraUsuario(ref ListaDeUsuarios); 
+                    CadastraUsuario(ref ListaDeUsuarios);
                 }
                 else if (opcao == "s")
                 {
