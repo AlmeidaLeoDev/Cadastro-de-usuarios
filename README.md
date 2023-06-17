@@ -1,29 +1,30 @@
 # Cadastro-de-usuarios
-### Cadastro de usuários no Console usando struct, List, Enum e Métodos
 
-1. O código começa com a definição do namespace "Cadastro_de_Usuarios".
+### Cadastro de Usuários
+Este é um programa de cadastro de usuários que permite adicionar informações pessoais, como nome, data de nascimento, rua e número da casa. Os dados cadastrados são armazenados em um arquivo de texto.
 
-2. A classe principal é definida como "Program" e marcada como interna (internal).
+### Funcionalidades
+O programa oferece as seguintes funcionalidades:
 
-3. É definida uma estrutura chamada "DadosCadastraisStruct" que armazena os dados de um usuário, como nome, data de nascimento, nome da rua e número da casa.
+Cadastro de novo usuário: Permite inserir os dados pessoais de um novo usuário, como nome, data de nascimento, rua e número da casa.
+Gravação de dados: Salva os dados cadastrados em um arquivo de texto.
+Carregamento de dados: Carrega os dados cadastrados previamente a partir de um arquivo de texto.
+Encerramento do programa: Permite sair do programa.
+Uso do programa
+Ao executar o programa, você será apresentado a um menu com as seguintes opções:
 
-4. É definido um enum chamado "Resultado_e" que representa os resultados possíveis das operações do programa, como sucesso, sair ou exceção.
+Digite "C" para cadastrar um novo usuário.
+Digite "S" para encerrar o programa.
+Caso escolha a opção de cadastrar um novo usuário, você será solicitado a inserir as informações pessoais do usuário, como nome, data de nascimento, rua e número da casa. Os dados serão validados e adicionados à lista de usuários cadastrados. Em seguida, os dados serão gravados em um arquivo de texto.
 
-5. São declarados vários métodos no código, que são utilizados para interagir com o usuário e obter os dados do cadastro. Esses métodos incluem "MostraMensagem", 
-"PegaString", "PegaData" e "PegaUInt32".
+### Arquivo de Dados
+O programa utiliza um arquivo de texto chamado "baseDeDados.txt" para armazenar os dados cadastrados. Cada usuário é delimitado por marcadores de início e fim, e cada campo do usuário possui uma tag correspondente.
 
-6. O método Main é o ponto de entrada do programa. Ele começa criando uma lista chamada "ListaDeUsuarios" para armazenar os dados dos usuários cadastrados.
+### Observações
+O programa trata exceções que possam ocorrer durante o cadastro, gravação e leitura de dados, exibindo as mensagens de erro correspondentes.
+O programa utiliza as classes e métodos da biblioteca System.IO para manipulação de arquivos.
+O programa utiliza estruturas (struct) para representar os dados cadastrais de cada usuário.
+O programa utiliza uma enumeração (enum) para definir os resultados possíveis ao interagir com o programa.
+O programa utiliza métodos auxiliares para simplificar a interação com o usuário e tratar a entrada de dados.
+O programa utiliza a classe List<T> para armazenar os usuários cadastrados.
 
-7. Em um loop do-while, o programa exibe uma mensagem solicitando ao usuário que digite "C" para cadastrar um novo usuário ou "S" para sair.
-
-8. Se o usuário digitar "C", o método "CadastraUsuario" é chamado. Esse método interage com o usuário para coletar os dados do novo usuário e os adiciona à lista 
-"ListaDeUsuarios".
-
-9. Se o usuário digitar "S", o programa exibe uma mensagem de encerramento e sai do loop.
-
-10. Se o usuário digitar qualquer outra coisa, o programa exibe uma mensagem informando que a opção é desconhecida.
-
-11. O loop continua até que o usuário digite "S" para sair, encerrando o programa.
-
-Em resumo, o programa permite que o usuário cadastre novos usuários fornecendo informações como nome, data de nascimento, nome da rua e número da casa. Os dados 
-são armazenados em uma lista e o programa continua solicitando novos cadastros até que o usuário escolha sair.
